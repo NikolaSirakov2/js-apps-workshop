@@ -83,32 +83,32 @@ h2 {
     margin: 16px 0 16px 32px;
 }
 
-.preview {
+#preview {
     vertical-align: middle;
 }
 
-.preview::after {
+#preview::after {
     content: "";
     clear: both;
     display: table;
 }
 
-.preview:hover {
+#preview:hover {
     background-color: salmon;
     cursor: pointer;
     box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.title {
+#title {
     float: left;
     width: 420px;
 }
 
-.title h2 {
+#title h2 {
     background-color: transparent;
 }
 
-.small {
+#small {
     float: left;
     background-color: white;
     width: 300px;
@@ -116,7 +116,7 @@ h2 {
     border-radius: 0 16px 16px 0;
 }
 
-.small>img {
+#small>img {
     max-width: 200px;
     margin: 16px auto;
     display: block;
