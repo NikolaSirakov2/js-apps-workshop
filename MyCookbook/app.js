@@ -5,7 +5,7 @@ class ViewController {
   }
 
   handleHashChange = (e) => {
-    const hash = location.hash.slice(1);
+    const hash = location.hash.slice(1) || PAGE_IDS[0];
 
     // if (!PAGE_IDS.includes(hash)) {
     //   location.hash = "error";
@@ -22,7 +22,6 @@ class ViewController {
     });
 
     switch (hash) {
-      
       case "recepies":
         this.renderRecepiesListPage();
         break;
@@ -40,17 +39,15 @@ class ViewController {
       .then((data) => {
         let article = document.getElementById("recepiesList");
 
-        console.log(data["03"]);
+        Object.values(data).forEach((recepie) => {
+          console.log(recepie._id);
 
-        for (let i = 1; i < 4; i++) {
           let card = document.createElement("div");
-          let image = data[`0${i}`].img;
-          let name = data[`0${i}`].name;
 
           card.innerHTML = `<div class="card" style="width: 28rem;">
-            <img src="${image}" class="card-img-top" alt="...">
+            <img src="${recepie.img}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">${name}</h5>
+              <h5 class="card-title">${recepie.name}</h5>
               
             </div>
           </div>`;
@@ -61,16 +58,15 @@ class ViewController {
 
           detailsBtn.onclick = (e) => {
             e.preventDefault();
-         console.log(5);
-         location.hash = "details";
-            this.renderDetailsPage(data[`0${i}`]._id);
-            
+            console.log(5);
+            location.hash = "details";
+            this.renderDetailsPage(recepie._id);
           };
 
-          card.appendChild(detailsBtn)
+          card.appendChild(detailsBtn);
 
           article.append(card);
-        }
+        });
       });
   };
 
