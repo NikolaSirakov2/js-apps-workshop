@@ -38,10 +38,9 @@ class ViewController {
       })
       .then((data) => {
         let article = document.getElementById("recepiesList");
+        article.innerHTML = "";
 
         Object.values(data).forEach((recepie) => {
-          console.log(recepie._id);
-
           let card = document.createElement("div");
 
           card.innerHTML = `<div class="card" style="width: 28rem;">
@@ -58,8 +57,9 @@ class ViewController {
 
           detailsBtn.onclick = (e) => {
             e.preventDefault();
-            console.log(5);
+
             location.hash = "details";
+
             this.renderDetailsPage(recepie._id);
           };
 
@@ -70,7 +70,44 @@ class ViewController {
       });
   };
 
-  renderDetailsPage = (id) => {};
+  renderDetailsPage = (id) => {
+    let details = fetch(
+      `http://localhost:3030/jsonstore/cookbook/details/${id}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        let article = document.getElementById("detailsContainer");
+        article.innerHTML = "";
+
+        
+          let card = document.createElement("div");
+
+          card.innerHTML = `<div class="card" style="width: 38rem;">
+                    
+                    <div class="card-body">
+                    <img src="${data.img}" class="card-img-top" alt="...">
+                    <h2 class="card-title">Ingredients:</h2>
+                      <h5 class="card-title">${data.ingredients[0]}</h5>
+                      <h5 class="card-title">${data.ingredients[1]}</h5>
+                      <h5 class="card-title">${data.ingredients[2]}</h5>
+                    </div>
+                    <div class="card-body">
+                    <h2 class="card-title">Preparation:</h2>
+                      <h5 class="card-title">${data.steps[0]}</h5>
+                      <h5 class="card-title">${data.steps[1]}</h5>
+                      <h5 class="card-title">${data.steps[2]}</h5>
+                    </div>
+                  </div>`;
+
+          
+
+          article.append(card);
+        
+      });
+  };
 }
 
 let viewController = new ViewController();
