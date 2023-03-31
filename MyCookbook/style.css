@@ -2,7 +2,7 @@
     background-color: aquamarine;
 }
 
-#details {
+.card {
     background-color: tomato;
-    width: 100vw;
+    
 }

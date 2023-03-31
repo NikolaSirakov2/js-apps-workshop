@@ -43,7 +43,7 @@ class ViewController {
         Object.values(data).forEach((recepie) => {
           let card = document.createElement("div");
 
-          card.innerHTML = `<div class="card" style="width: 28rem;">
+          card.innerHTML = `<div class="card" style="width: 18rem;">
             <img src="${recepie.img}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${recepie.name}</h5>
@@ -84,6 +84,7 @@ class ViewController {
 
         
           let card = document.createElement("div");
+          // card.style.background = "tomato";
 
           card.innerHTML = `<div class="card" style="width: 38rem;">
                     
