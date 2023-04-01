@@ -35,11 +35,12 @@
 #register {
     width: 400px;
     margin: auto;
-    background-color: aqua;
+    background-color: rgb(126, 179, 133);
   }
   
   #login {
     width: 400px;
     margin: auto;
-    background-color: bisque;
+    background-color: rgb(145, 65, 134);
+    color: antiquewhite;
   }
