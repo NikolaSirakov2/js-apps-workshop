@@ -1,31 +1,31 @@
-class CocktailsManager {
+// class CocktailsManager {
 
 
-    getAll = () => {
+//     getAll = () => {
 
-        let sessionId = JSON.parse(localStorage.getItem('loggedUser')).sessionId;
+//         let sessionId = JSON.parse(localStorage.getItem('loggedUser')).sessionId;
 
-        return makeAPICall(SERVER_URL + "/favorite-cocktails", {
-            headers: {
-                "identity" : sessionId,
-            },
-        })
-    }
+//         return makeAPICall(SERVER_URL + "/favorite-cocktails", {
+//             headers: {
+//                 "identity" : sessionId,
+//             },
+//         })
+//     }
 
     
-    addToFavourites = (cocktailId) => {
+//     addToFavourites = (cocktailId) => {
 
-        let sessionId = JSON.parse(localStorage.getItem('loggedUser')).sessionId;
+//         let sessionId = JSON.parse(localStorage.getItem('loggedUser')).sessionId;
 
-        return makeAPICall(SERVER_URL + "/favorite-cocktails", {
-            method: "POST",
-            headers: {
-                "identity" : sessionId,
-                "Content-type" : "application/json"
-            },
-            body: JSON.stringify({
-                "id": cocktailId
-            })
-        })
-    }
-}
+//         return makeAPICall(SERVER_URL + "/favorite-cocktails", {
+//             method: "POST",
+//             headers: {
+//                 "identity" : sessionId,
+//                 "Content-type" : "application/json"
+//             },
+//             body: JSON.stringify({
+//                 "id": cocktailId
+//             })
+//         })
+//     }
+// }
