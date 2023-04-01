@@ -6,21 +6,23 @@ class LogInController {
 
     render = () => {
         
-        let linkFilters = getEl("linkFilters");
-        let linkCocktails = getEl("linkCocktails");
+        // let linkFilters = getEl("linkFilters");
+        // let linkCocktails = getEl("linkCocktails");
         
-        linkFilters.innerText = "";
-        linkCocktails.innerText = "";
+        // linkFilters.innerText = "";
+        // linkCocktails.innerText = "";
         
         let userManag = getEl("userManag");
 
-        userManag.innerText = "Dont have acount? Register here!";
-        userManag.href = "#register";
+        // userManag.innerText = "Dont have acount? Register here!";
+        // userManag.href = "#register";
         
         let form = getEl("loginForm");
 
         form.onsubmit = (event) => {
                 event.preventDefault();
+
+                console.log("test login");
 
                 const {username: {value: username}, 
                     password: {value: password}, 
@@ -30,10 +32,10 @@ class LogInController {
 
                 this.userManager.logIn(username, password)
                 .then(data => {
-                    linkFilters.innerText = "Filters";
-                    linkCocktails.innerText = "Cocktails";
-                    userManag.innerText = "LogOut";
-                    location.hash = 'cocktails';
+                    // linkFilters.innerText = "Filters";
+                    // linkCocktails.innerText = "Cocktails";
+                    // userManag.innerText = "LogOut";
+                    location.hash = 'recepies';
                     
                 })
                 .catch(error => {
