@@ -5,21 +5,23 @@ class RegisterController {
     }
 
     render = () => {
-        let linkFilters = getEl("linkFilters");
-        let linkCocktails = getEl("linkCocktails");
+        // let linkFilters = getEl("linkFilters");
+        // let linkCocktails = getEl("linkCocktails");
         
-        linkFilters.innerText = "";
-        linkCocktails.innerText = "";
+        // linkFilters.innerText = "";
+        // linkCocktails.innerText = "";
         
         let form = getEl("regForm");
         let userManag = getEl("userManag");
 
     
-        userManag.innerText = "LogIn";
-        userManag.href = "#login";
+        // userManag.innerText = "LogIn";
+        // userManag.href = "#login";
 
         form.onsubmit = (event) => {
                 event.preventDefault();
+
+                console.log("test register");
 
                 const {username: {value: username}, 
                     password: {value: password}, 
