@@ -8,7 +8,7 @@ class UserManager {
 
 
     register = (username, password) => {
-        return makeAPICall(SERVER_URL + '/users', {
+        return makeAPICall('http://localhost:3030/users/register', {
             method: "POST",
             headers: {
                 "Content-type" : "application/json"
@@ -22,7 +22,7 @@ class UserManager {
     }
 
     logIn = (username, password) => {
-        return makeAPICall(SERVER_URL + '/login', {
+        return easyFetch('http://localhost:3030/users/login', {
             method: "POST",
             headers: {
                 "Content-type" : "application/json"
@@ -32,8 +32,8 @@ class UserManager {
                 password
             })
         })
-        .then(({hasVoted, sessionId, username}) => {
-                localStorage.setItem('loggedUser', JSON.stringify({hasVoted, sessionId, username}))
+        .then(({sessionId, username}) => {
+                localStorage.setItem('loggedUser', JSON.stringify({sessionId, username}))
         })
     }
 
@@ -41,14 +41,14 @@ class UserManager {
 
         localStorage.setItem('loggedUser', null);
 
-        return makeAPICall(SERVER_URL + "/logout", {
-            method: "POST",
+        return makeAPICall("http://localhost:3030/users/logout", {
+            method: "GET",
             headers: {
                 "Content-type" : "application/json"
             },
-            body: JSON.stringify({
-                id: sessionId
-            })
+            // body: JSON.stringify({
+            //     id: sessionId
+            // })
         })
         
     }
