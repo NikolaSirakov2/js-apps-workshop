@@ -12,30 +12,120 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="constants.js"></script>
+    <script src="./utilis.js"></script>
+    <script src="./model/UserManager.js"></script>
+    <script src="./model/CocktailsManager.js"></script>
 
-
+    <script src="./controllers/LogInController.js"></script>
+    <script src="./controllers/RegisterController.js"></script>
   </head>
+
   <body>
+
     <header>
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <a href="#recepies" class="navbar-brand mb-0 h1" id="myCookbook">My Cookbook</a>
-          <a href="#recepies" class="navbar-brand mb-0 h1" id="catalog">Catalog</a>
-          <a href="#recepies" class="navbar-brand mb-0 h1" id="login">Login</a>
-          <a href="#recepies" class="navbar-brand mb-0 h1" id="register">Register</a>
+          <a class="navbar-brand mb-0 h1" id="myCookbook"
+            >My Cookbook</a
+          >
+          <a href="#recepies" class="navbar-brand mb-0 h1" id="catalog"
+            >Catalog</a
+          >
+          <a href="#login" class="navbar-brand mb-0 h1" id="loginNav">Login</a>
+          <a href="#register" class="navbar-brand mb-0 h1" id="registerNav"
+            >Register</a
+          >
         </div>
       </nav>
     </header>
 
-    <div id="recepies">
-        <div id="recepiesList">
-            
+    <div id="register" class="text-center">
+      <form id="regForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">User name</label>
+          <input
+            name="username"
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            required
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
         </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            name="confirmPass"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+
+    <div id="login" class="text-center">
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">User name</label>
+          <input
+            name="username"
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            required
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </form>
+    </div>
+
+    <div id="recepies">
+      <div id="recepiesList"></div>
     </div>
 
     <div id="details">
-        <div id="detailsContainer"></div>
+      <div id="detailsContainer"></div>
     </div>
+
+    <div id="create"></div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"

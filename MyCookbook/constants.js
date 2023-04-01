@@ -1,1 +1,1 @@
-const PAGE_IDS = ["logIn", "register", "recepies", "details"];
+const PAGE_IDS = ["login", "register", "recepies", "details"];

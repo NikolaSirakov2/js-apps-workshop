@@ -2,6 +2,11 @@ class ViewController {
   constructor() {
     window.addEventListener("load", this.handleHashChange);
     window.addEventListener("hashchange", this.handleHashChange);
+    this.userManager = new UserManager();
+    this.cocktailsManager = new CocktailsManager();
+
+    this.registerController = new RegisterController(this.userManager);
+    this.logInController = new LogInController(this.userManager);
   }
 
   handleHashChange = (e) => {
