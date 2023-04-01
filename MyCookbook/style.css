@@ -6,3 +6,28 @@
     background-color: tomato;
     
 }
+
+#catalog {
+    background-color: green;
+    color: antiquewhite;
+    position: relative;
+    left: 300px;
+    border: 2px;
+    border-radius: 10%;
+}
+
+#login {
+    background-color: tomato;
+    color: antiquewhite;
+    position: relative;
+    left: 150px;
+    border: 2px;
+    border-radius: 10%;
+}
+
+#register {
+    background-color: tomato;
+    color: antiquewhite;
+    border: 2px;
+    border-radius: 10%;
+}
